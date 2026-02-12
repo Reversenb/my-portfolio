@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+   
+    "jsx": "react-jsx", // บอกให้ TS รู้ว่าใช้ React 17+ (ไม่ต้อง import React)
+    "noUnusedLocals": false, // ปิดการแจ้งเตือนตัวแปรที่ประกาศไว้แต่ไม่ได้ใช้ (ถ้าต้องการความคล่องตัว)
+    "noUnusedParameters": false,
+    "types": ["react", "react-dom"], // บังคับให้โหลด Type ของ React เข้ามา
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
