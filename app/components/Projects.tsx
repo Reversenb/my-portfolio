@@ -10,7 +10,7 @@ const projects = [
         description: "A movie streaming web application inspired by Netflix. Designed with a modern dark theme UI, smooth navigation, and responsive experience.",
         tech: ["Angular", "ElysiaJS", "MongoDB", "TypeScript"],
         image: "/project/1.jpg",
-        link: "#", // ใส่ลิงก์จริงถ้ามี
+        link: "#", 
         github: "#"
     },
     {
@@ -22,6 +22,46 @@ const projects = [
         github: "#"
     },
     {
+        title: "Tinner App",
+        description: "A web/mobile app inspired by Tinder. Features card-swiping interface for matching users and real-time chat functionality.",
+        tech: ["Angular", "MongoDB", "TypeScript", "Socket.io"],
+        image: "/project/3.jpg",
+        link: "#",
+        github: "#"
+    },
+     {
+        title: "Tinner App",
+        description: "A web/mobile app inspired by Tinder. Features card-swiping interface for matching users and real-time chat functionality.",
+        tech: ["Angular", "MongoDB", "TypeScript", "Socket.io"],
+        image: "/project/3.jpg",
+        link: "#",
+        github: "#"
+    },
+     {
+        title: "Tinner App",
+        description: "A web/mobile app inspired by Tinder. Features card-swiping interface for matching users and real-time chat functionality.",
+        tech: ["Angular", "MongoDB", "TypeScript", "Socket.io"],
+        image: "/project/3.jpg",
+        link: "#",
+        github: "#"
+    },
+     {
+        title: "Tinner App",
+        description: "A web/mobile app inspired by Tinder. Features card-swiping interface for matching users and real-time chat functionality.",
+        tech: ["Angular", "MongoDB", "TypeScript", "Socket.io"],
+        image: "/project/3.jpg",
+        link: "#",
+        github: "#"
+    },
+     {
+        title: "Tinner App",
+        description: "A web/mobile app inspired by Tinder. Features card-swiping interface for matching users and real-time chat functionality.",
+        tech: ["Angular", "MongoDB", "TypeScript", "Socket.io"],
+        image: "/project/3.jpg",
+        link: "#",
+        github: "#"
+    },
+     {
         title: "Tinner App",
         description: "A web/mobile app inspired by Tinder. Features card-swiping interface for matching users and real-time chat functionality.",
         tech: ["Angular", "MongoDB", "TypeScript", "Socket.io"],
@@ -43,10 +83,10 @@ export function Projects() {
                     transition={{ duration: 0.6 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                        Selected Works
+                        My Project
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        A collection of projects that I've worked on, ranging from web applications to game development.
+                        A collection of projects that I've worked on, ranging from web applications,applications to game development.
                     </p>
                 </motion.div>
 

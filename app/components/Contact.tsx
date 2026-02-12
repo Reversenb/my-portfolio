@@ -59,7 +59,7 @@ export function Contact() {
                             type="text"
                             required
                             className="w-full bg-[#1e1e1e]/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-gray-600"
-                            placeholder="John Doe"
+                            placeholder="Thanabodee SK"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         />
@@ -71,7 +71,7 @@ export function Contact() {
                             type="email"
                             required
                             className="w-full bg-[#1e1e1e]/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-gray-600"
-                            placeholder="john@example.com"
+                            placeholder="Thanabodee@example.com"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         />

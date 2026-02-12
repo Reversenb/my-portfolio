@@ -4,9 +4,17 @@ import { motion, type Variants } from "framer-motion";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import React, { useEffect, useMemo, useRef, useState, type JSX } from "react";
-import { Github, Instagram } from "lucide-react";
-// ถ้าใช้ Next.js แนะนำให้ใช้ Image แทน img (ถ้ายังไม่ได้ตั้งค่าใช้ img ธรรมดาไปก่อนได้)
+
+// Icons
+import { Github, Instagram, ArrowRight, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"; 
 import Image from "next/image"; 
+
+// Import images
+import rv1 from "../assets/rmuti1.jpg"; 
+import rv2 from "../assets/rmuti2.jpg";
+import rv3 from "../assets/rmuti3.jpg";
+import rv4 from "../assets/rmuti4.jpg";
+
 
 const fadeInUp: Variants = {
     initial: { opacity: 0, y: 20 },
@@ -21,11 +29,11 @@ const DESKTOP_SLIDER = { width: 700, height: 500 }
 const MOBILE_SLIDER = { height: 220 }
 
 const GALLERY = [
-    "/reverse/rv1.png",
-    "/reverse/rv2.png",
-    "/reverse/rv3.png",
-    "/reverse/rv4.png",
-    "/reverse/rv5.png",
+    rv1,
+    rv2,
+    rv3,
+    rv4,
+   
 ]
 
 function useMediaQuery(query: string) {
@@ -77,7 +85,9 @@ export function Hero(): JSX.Element {
         return stopAuto
     }, [total])
 
-    const xTranslate = useMemo(() => `-${index * 100}%`, [index])
+    // ✅ แก้ไข Logic การเลื่อน: คำนวณ % ตามจำนวนรูปจริง 
+    // (เช่นมี 5 รูป ต้องเลื่อนทีละ 20% ไม่ใช่ 100%)
+    const xTranslate = useMemo(() => `-${index * (100 / total)}%`, [index, total])
 
     // ===== Typewriter (loop) for the small snippet =====
     const SNIPPET = `const aboutMe: Thanabodee Sahakongsin = { ... }`
@@ -134,7 +144,7 @@ export function Hero(): JSX.Element {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
         >
-            {/* Background Glow Effects (เพิ่มความแพง) */}
+            {/* Background Glow Effects */}
             <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
 
@@ -155,7 +165,7 @@ export function Hero(): JSX.Element {
                     animate="animate"
                 >
                     <motion.div className="hero-badge inline-block px-4 py-2 bg-white/10 rounded-full mb-6 backdrop-blur-md border border-white/20">
-                        <span className="text-sm font-medium"> 窓 Hello, I'm </span>
+                        <span className="text-sm font-medium"> 👋Hello, I'm </span>
                     </motion.div>
 
                     <motion.h1 
@@ -167,7 +177,7 @@ export function Hero(): JSX.Element {
                     </motion.h1>
 
                     <motion.h2 className="hero-subtitle text-2xl md:text-3xl text-[var(--accent-color)] mb-6 font-semibold" variants={fadeInUp}>
-                        Computer Science Student
+                        Computer Science Student RMUTI
                     </motion.h2>
 
                     <motion.p className="hero-description text-lg text-gray-300 mb-8 leading-relaxed max-w-xl" variants={fadeInUp}>
@@ -176,18 +186,19 @@ export function Hero(): JSX.Element {
                         something new.
                     </motion.p>
 
-                    <motion.div className="cta-buttons flex gap-4 mb-8" variants={staggerContainer}>
+                    <motion.div className="cta-buttons flex flex-wrap gap-4 mb-8" variants={staggerContainer}>
                         <motion.a 
                             href="#projects" 
-                            className="cta-primary px-8 py-3 bg-white text-blue-900 rounded-full font-bold shadow-lg hover:shadow-xl transition-all" 
+                            className="cta-primary px-8 py-3 bg-white text-blue-900 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2" 
                             whileHover={{ scale: 1.05 }} 
                             whileTap={{ scale: 0.95 }}
                         >
                             View My Projects
+                            <ArrowRight size={20} />
                         </motion.a>
                         <motion.a 
-                            href="#contacts" 
-                            className="cta-secondary px-8 py-3 border border-white/30 bg-white/5 backdrop-blur-sm rounded-full font-bold text-white hover:bg-white/10 transition-all" 
+                            href="#contact" 
+                            className="cta-secondary px-8 py-3 border border-white/30 bg-white/5 backdrop-blur-sm rounded-full font-bold text-white hover:bg-white/10 transition-all flex items-center gap-2" 
                             whileHover={{ scale: 1.05 }} 
                             whileTap={{ scale: 0.95 }}
                         >
@@ -210,7 +221,7 @@ export function Hero(): JSX.Element {
                             <Github size={28} />
                         </motion.a>
                         <motion.a
-                            href="https://www.instagram.com"
+                            href="https://www.instagram.com/reverse7kk/"
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.2, color: "var(--accent-color)" }}
@@ -248,11 +259,10 @@ export function Hero(): JSX.Element {
                         >
                             {`const aboutMe: DeveloperProfile = {
   codename: "Thanabodee Sahakongsin", 
-  origin: "訣 Somewhere between a coffee shop and a terminal",
   role: "Full-Stack Developer",
   stack: {
-    languages: ["JavaScript", "TypeScript", "Python", "C++", "C#", "Golang"],
-    frameworks: ["React", "Next.js", "TailwindCSS", "Supabase"],
+    languages: ["JavaScript", "TypeScript", "Python", "C++", "C#", "Golang","Dart"],
+    frameworks: ["React", "Next.js", "TailwindCSS", "Flutter"],
   },
   traits: ["dark-mode purist", "bug-slayer"],
   missionStatement: "Craft. Learn. Ship.",
@@ -284,7 +294,7 @@ export function Hero(): JSX.Element {
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         >
                             <div className="px-5 py-3 rounded-xl bg-slate-800/90 backdrop-blur-md shadow-lg border border-white/10 text-white flex items-center gap-2">
-                                <span className="text-xl">捗</span>
+                                <span className="text-xl">🤖</span>
                                 <span className="font-medium text-sm">Cooking up some cool stuff!</span>
                             </div>
                         </motion.div>
@@ -307,12 +317,18 @@ export function Hero(): JSX.Element {
                             style={{ width: `${total * 100}%` }}
                         >
                             {GALLERY.map((src, i) => (
-                                <div key={i} className="slide relative w-full h-full flex-shrink-0 bg-slate-900">
+                                <div 
+                                    key={i} 
+                                    className="slide relative h-full flex-shrink-0 bg-slate-900"
+                                    // ✅ แก้ไขความกว้าง Slide: กำหนดให้แต่ละรูปมีความกว้างเท่ากับ 1 Viewport (100% / จำนวนรูป)
+                                    style={{ width: `${100 / total}%` }}
+                                >
                                     <Image
                                         src={src}
                                         alt={`slide-${i + 1}`}
                                         fill
-                                        style={{ objectFit: "cover" }}
+                                        // ✅ ใช้ contain เพื่อให้เห็นรูปครบใบ
+                                        style={{ objectFit: "contain" }} 
                                         className="hover:scale-105 transition-transform duration-700"
                                     />
                                 </div>
@@ -324,18 +340,45 @@ export function Hero(): JSX.Element {
                             onClick={prev} 
                             className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 transition-all z-10"
                         >
-                            窶ｹ
+                            <ChevronLeft size={24} />
                         </button>
                         <button 
                             aria-label="Next" 
                             onClick={next} 
                             className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 transition-all z-10"
                         >
-                            窶ｺ
+                            <ChevronRight size={24} />
                         </button>
                     </div>
                 </motion.div>
             </div>
+
+             {/* Scroll Down Indicator */}
+             <motion.div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 cursor-pointer z-20"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 1, duration: 0.8 } 
+                }}
+            >
+                <motion.a
+                    href="#projects"
+                    animate={{ y: [0, 10, 0] }} // อนิเมชั่นเด้งขึ้นลง
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut"
+                    }}
+                    className="flex flex-col items-center gap-1"
+                >
+                    <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
+                    <ChevronDown size={24} />
+                </motion.a>
+            </motion.div>
+
         </motion.section>
     )
 }
