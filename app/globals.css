@@ -1,26 +1,41 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* ปรับสีเดิมให้ดูสุขุมขึ้น (Saturation ต่ำลงนิดหน่อยจะดูแพงขึ้น) */
+  --primary-color: #4f46e5; /* ปรับจาก #3a3aed ให้ดูทันสมัยขึ้น */
+  --primary-dark: #3730a3;
+  --secondary-color: #fbbf24;
+  --accent-color: #d9f99d; /* Lime แบบนวลๆ */
+  
+  /* Background ที่ดูแพงคือสีที่ไม่ดำสนิท และมี Depth */
+  --background: #0b0f19; /* เข้มกว่าเดิมนิดหน่อย เพื่อให้คอนเทนต์เด้ง */
+  --section-bg: #111827;
+  --card-bg: rgba(30, 41, 59, 0.4); /* ลด Opacity เพิ่ม Blur */
+  
+  --text-color: #f8fafc;
+  --light-text: #94a3b8;
+  
+  --nav-bg: rgba(11, 15, 25, 0.7); /* Glassmorphism */
+  --card-border: rgba(255, 255, 255, 0.08); /* เส้นขอบบางๆ จางๆ คือคีย์ของความแพง */
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  line-height: 1.7; /* เพิ่มระยะบรรทัดให้อ่านสบายตา */
+  overflow-x: hidden;
+}
+
+/* Scrollbar แบบ Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
 }
