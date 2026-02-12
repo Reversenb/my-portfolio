@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react"; // ใช้ Icon สำหรับ Mobile Menu
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
     { name: "Home", href: "#home" },
@@ -10,6 +10,7 @@ const navLinks = [
     { name: "Contact", href: "#contact" },
 ];
 
+// ✅ ต้องเขียนว่า export function (ห้ามมี default)
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,7 +35,6 @@ export function Navbar() {
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
             <div className="max-w-[1400px] mx-auto px-[5%] flex justify-between items-center">
-                {/* Logo */}
                 <motion.a 
                     href="#home"
                     className="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
@@ -44,7 +44,6 @@ export function Navbar() {
                     Portfolio
                 </motion.a>
 
-                {/* Desktop Menu */}
                 <ul className="hidden md:flex gap-8 items-center">
                     {navLinks.map((link) => (
                         <motion.li key={link.name} whileHover={{ y: -2 }}>
@@ -59,13 +58,11 @@ export function Navbar() {
                     ))}
                 </ul>
 
-                {/* Mobile Menu Button */}
                 <div className="md:hidden text-white cursor-pointer" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                     {mobileMenuOpen ? <X /> : <Menu />}
                 </div>
             </div>
 
-            {/* Mobile Menu Dropdown */}
             {mobileMenuOpen && (
                 <motion.div 
                     className="md:hidden absolute top-full left-0 w-full bg-[#0b0f19] border-b border-white/10 py-4 px-[5%]"

@@ -1,8 +1,8 @@
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
+import Hero from "./components/Hero"; // Hero เป็น export default ไม่ต้องมี {}
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
-import Footer from "./components/Footer";
+import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (

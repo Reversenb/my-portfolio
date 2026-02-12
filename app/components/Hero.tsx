@@ -11,7 +11,6 @@ import Image from "next/image";
 
 // Import images
 import rv1 from "../assets/rmuti1.jpg"; 
-import rv2 from "../assets/rmuti2.jpg";
 import rv3 from "../assets/rmuti3.jpg";
 import rv4 from "../assets/rmuti4.jpg";
 
@@ -30,7 +29,6 @@ const MOBILE_SLIDER = { height: 220 }
 
 const GALLERY = [
     rv1,
-    rv2,
     rv3,
     rv4,
    
@@ -295,7 +293,7 @@ export function Hero(): JSX.Element {
                         >
                             <div className="px-5 py-3 rounded-xl bg-slate-800/90 backdrop-blur-md shadow-lg border border-white/10 text-white flex items-center gap-2">
                                 <span className="text-xl">🤖</span>
-                                <span className="font-medium text-sm">Cooking up some cool stuff!</span>
+                                <span className="font-medium text-sm">CS</span>
                             </div>
                         </motion.div>
                     </div>
