@@ -42,7 +42,7 @@ export function Contact() {
                     viewport={{ once: true }}
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-                    <p className="text-gray-400">Have a project in mind or just want to say hi?</p>
+                    <p className="text-gray-400">Email: thanabodee.th@rmuti.ac.th</p>
                 </motion.div>
 
                 <motion.form 

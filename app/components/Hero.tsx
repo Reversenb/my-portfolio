@@ -296,7 +296,7 @@ export function Hero(): JSX.Element {
                         >
                             <div className="px-5 py-3 rounded-xl bg-slate-800/90 backdrop-blur-md shadow-lg border border-white/10 text-white flex items-center gap-2">
                                 <span className="text-xl">🤖</span>
-                                <span className="font-medium text-sm">CS</span>
+                                <span className="font-medium text-sm">Computer science</span>
                             </div>
                         </motion.div>
                     </div>
