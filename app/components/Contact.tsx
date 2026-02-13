@@ -13,18 +13,36 @@ export function Contact() {
         e.preventDefault();
         setStatus("sending");
 
+        // --- 🔍 ส่วนตรวจสอบค่า (Debug) ---
+        // ให้เปิด Console (F12) ดูตอนกดส่ง ถ้าค่าไหนเป็น undefined แสดงว่ายังไม่ได้ตั้งค่าใน .env.local หรือยังไม่ได้ Restart Server
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+        console.log("🚀 Debugging EmailJS Config:");
+        console.log("Service ID:", serviceId ? "✅ Loaded" : "❌ Missing");
+        console.log("Template ID:", templateId ? "✅ Loaded" : "❌ Missing");
+        console.log("Public Key:", publicKey ? "✅ Loaded" : "❌ Missing");
+
+        if (!serviceId || !templateId || !publicKey) {
+            console.error("❌ Error: Missing Environment Variables. Please check .env.local");
+            setStatus("error");
+            return;
+        }
+        // --------------------------------
+
         try {
             await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                serviceId,
+                templateId,
                 formData,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+                publicKey
             );
             setStatus("success");
             setFormData({ name: "", email: "", message: "" });
             setTimeout(() => setStatus("idle"), 3000);
         } catch (error) {
-            console.error(error);
+            console.error("❌ EmailJS Error:", error);
             setStatus("error");
         }
     };
@@ -42,7 +60,8 @@ export function Contact() {
                     viewport={{ once: true }}
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-                    <p className="text-gray-400">Email: thanabodee.th@rmuti.ac.th</p>
+                    {/* แสดงอีเมลไว้ให้คนก๊อปปี้ได้ด้วย */}
+                    <p className="text-gray-400 select-all">Email: thanabodee.th@rmuti.ac.th</p>
                 </motion.div>
 
                 <motion.form 
@@ -59,7 +78,7 @@ export function Contact() {
                             type="text"
                             required
                             className="w-full bg-[#1e1e1e]/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-gray-600"
-                            placeholder="Thanabodee SK"
+                            placeholder="Your Name"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         />
@@ -71,7 +90,7 @@ export function Contact() {
                             type="email"
                             required
                             className="w-full bg-[#1e1e1e]/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all placeholder:text-gray-600"
-                            placeholder="Thanabodee@example.com"
+                            placeholder="Your Email"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         />

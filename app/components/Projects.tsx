@@ -25,6 +25,9 @@ import Ai1 from "../assets/ai1.jpg";
 import Ai2 from "../assets/ai2.jpg"; 
 import Pet1 from "../assets/pet1.jpg"; 
 import Pet2 from "../assets/pet2.jpg"; 
+import Fitjust from "../assets/Fitjust1.jpg"
+import Fitjust2 from "../assets/Fitjust2.jpg"
+import Phone from "../assets/phone.jpg"
 // ถ้ามีรูปอื่นก็ import เพิ่ม: import rmuti2 from "../assets/rmuti2.jpg";
 
 const projects = [
@@ -61,7 +64,7 @@ const projects = [
     title: "Fire Focus",
     description: "A gamified focus timer application with offline party mode to boost productivity.",
     longDescription: "แอปพลิเคชันจับเวลาโฟกัสที่เปลี่ยนการทำงานให้เป็นเกมเลี้ยงกองไฟ (Gamification) โดดเด่นด้วยฟีเจอร์ Offline Party Mode เชื่อมต่อกับเพื่อนผ่าน Bluetooth โดยไม่ต้องใช้เน็ต เพื่อช่วยกันโฟกัสและสร้างวินัยร่วมกัน พร้อมระบบบทลงโทษ (Penalty) ตัดคะแนนจริง และ UI แบบ Glassmorphism สุดล้ำ",
-    tech: ["Flutter", "Dart", "SQLite", "Nearby Connections", "Lottie"],
+    tech: ["Flutter", "Dart", "SQLite", "Nearby Connections", "Lottie", "Gemini API",],
     images: [FireFocus],
     link: "#",
     github: "#"
@@ -97,6 +100,39 @@ const projects = [
     "link": "#",
     "github": "#"
 
+}
+,
+// {
+    
+   
+   
+//     "title": "Fit - 7 Day Workout Planner",
+//     "description": "Personalized fitness scheduling app for 7-day workout routines and exercise tracking.",
+//     "longDescription": "Fitjust เป็นแอปพลิเคชันจัดการตารางออกกำลังกายแบบครบวงจร 7 วัน ที่ช่วยให้ผู้ใช้งานสามารถวางแผนท่าออกกำลังกายในแต่ละวันได้อย่างเป็นระบบ มาพร้อมคลังท่าออกกำลังกายที่แบ่งตามส่วนต่างๆ ของร่างกาย (Body Parts) ผู้ใช้สามารถจัดตารางฝึกซ้อมล่วงหน้า ติดตามความคืบหน้า และตั้งเป้าหมายรายสัปดาห์ได้ เพื่อช่วยสร้างวินัยและทำให้การออกกำลังกายมีประสิทธิภาพสูงสุด",
+//     "tech": ["Flutter", "Dart", "SQLite", "Lottie Animations","API"],
+//     "images": [Fitjust,Fitjust2],
+//     "link": "#",
+//     "github": "#"
+
+
+
+// },
+{
+  "title": "Phone Store Manager - ระบบบริหารจัดการร้านโทรศัพท์",
+  "description": "Web Application สำหรับจัดการข้อมูลร้านค้าและเจ้าของร้านแบบ Real-time พัฒนาด้วย Next.js และ Supabase",
+  "longDescription": "Phone Store Manager คือระบบ Back-office สำหรับบริหารจัดการเครือข่ายร้านขายโทรศัพท์มือถือ ออกแบบมาเพื่อให้ผู้ดูแลระบบ",
+  "tech": [
+    "Next.js ",
+    "Supabase ",
+    "Tailwind CSS",
+    "TypeScript",
+    "CRUD"
+  ],
+  "images": [
+    Phone
+  ],
+  "link": "#",
+  "github": "#"
 }
 
     
