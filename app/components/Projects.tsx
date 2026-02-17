@@ -28,6 +28,10 @@ import Pet2 from "../assets/pet2.jpg";
 import Fitjust from "../assets/Fitjust1.jpg"
 import Fitjust2 from "../assets/Fitjust2.jpg"
 import Phone from "../assets/phone.jpg"
+import IhaveGPU1 from "../assets/gpu1.jpg"
+import IhaveGPU2 from "../assets/gpu2.jpg"
+import IhaveGPU3 from "../assets/gpu3.jpg"
+import IhaveGPU4 from "../assets/gpu4.png"
 // ถ้ามีรูปอื่นก็ import เพิ่ม: import rmuti2 from "../assets/rmuti2.jpg";
 
 const projects = [
@@ -70,16 +74,7 @@ const projects = [
     github: "#"
 
     },
-    {
-      
-    "title": "I HAVE GPU",
-    "description": "A modern e-commerce platform for computer hardware with real-time admin dashboard.",
-    "longDescription": "แพลตฟอร์ม E-commerce จำหน่ายอุปกรณ์คอมพิวเตอร์ครบวงจร พัฒนาด้วย Next.js 16 ล่าสุด โดดเด่นด้วยระบบจัดการหลังบ้าน (Back-office) ที่สมบูรณ์แบบ ให้ Admin จัดการออเดอร์ ตัดสต็อก และตรวจสอบสลิปการโอนเงินได้ทันที พร้อมระบบสมาชิก (Authentication) และฟีเจอร์แชทซัพพอร์ตระหว่างลูกค้ากับร้านค้า",
-    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Auth.js"],
-    "images": ["/project/ihavegpu_1.jpg", "/project/ihavegpu_2.jpg"],
-    "link": "#",
-    "github": "#"
-},
+    
 {
     "title": "AI WEATHER",
     "description": "An intelligent weather assistant chatbot on LINE, powered by n8n and Gemini API.",
@@ -131,6 +126,15 @@ const projects = [
   "images": [
     Phone
   ],
+  "link": "#",
+  "github": "#"
+},
+{
+  "title": "I HAVE GPU - AI PC Builder & Store",
+  "description": "Next.js E-commerce platform with AI-powered PC specification builder.",
+  "longDescription": "I HAVE GPU คือเว็บแอปพลิเคชัน E-commerce สำหรับจำหน่ายอุปกรณ์คอมพิวเตอร์ครบวงจร จุดเด่นคือระบบ 'AI PC Builder' ที่เชื่อมต่อกับ Gemini AI ช่วยให้ผู้ใช้สามารถจัดสเปกคอมพิวเตอร์ได้อัตโนมัติเพียงแค่พิมพ์ความต้องการ หรือระบุงบประมาณ ระบบจะเลือกอุปกรณ์ที่เข้ากันได้ (Compatibility Check) ให้ทันที มาพร้อมระบบจัดการสินค้า (Inventory), ระบบตะกร้า (Cart), การชำระเงิน และ Dashboard สำหรับ Admin เพื่อดูยอดขายและจัดการออเดอร์",
+  "tech": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS", "Gemini AI API", "Zustand"],
+  "images": [IhaveGPU1,IhaveGPU2,IhaveGPU3,IhaveGPU4], 
   "link": "#",
   "github": "#"
 }
