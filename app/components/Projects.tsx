@@ -7,24 +7,24 @@ import { ExternalLink, Github, X, ChevronLeft, ChevronRight } from "lucide-react
 
 // ✅ 1. Import รูปภาพเข้ามา (ตรวจสอบชื่อไฟล์ในโฟลเดอร์ app/assets ให้ตรงกัน)
 
-import BallHub from "../assets/BallHub.jpg"; 
-import BallHub2 from "../assets/BallHub2.jpg"; 
-import Game from "../assets/game.jpg"; 
-import Game2 from "../assets/game2.jpg"; 
-import Tinner from "../assets/tinner.jpg"; 
-import FireFocus from "../assets/Fire Focus.jpg"; 
-import FireFocus1 from "../assets/Fire Focus.jpg"; 
-import FireFocus2 from "../assets/Fire Focus.jpg"; 
-import FireFocus3 from "../assets/Fire Focus.jpg"; 
-import FireFocus4 from "../assets/Fire Focus.jpg"; 
-import FireFocus6 from "../assets/Fire Focus.jpg"; 
-import FireFocus7 from "../assets/Fire Focus.jpg"; 
-import FireFocus8 from "../assets/Fire Focus.jpg"; 
-import FireFocus9 from "../assets/Fire Focus.jpg"; 
-import Ai1 from "../assets/ai1.jpg"; 
-import Ai2 from "../assets/ai2.jpg"; 
-import Pet1 from "../assets/pet1.jpg"; 
-import Pet2 from "../assets/pet2.jpg"; 
+import BallHub from "../assets/BallHub.jpg";
+import BallHub2 from "../assets/BallHub2.jpg";
+import Game from "../assets/game.jpg";
+import Game2 from "../assets/game2.jpg";
+import Tinner from "../assets/tinner.jpg";
+import FireFocus from "../assets/Fire Focus.jpg";
+import FireFocus1 from "../assets/Fire Focus.jpg";
+import FireFocus2 from "../assets/Fire Focus.jpg";
+import FireFocus3 from "../assets/Fire Focus.jpg";
+import FireFocus4 from "../assets/Fire Focus.jpg";
+import FireFocus6 from "../assets/Fire Focus.jpg";
+import FireFocus7 from "../assets/Fire Focus.jpg";
+import FireFocus8 from "../assets/Fire Focus.jpg";
+import FireFocus9 from "../assets/Fire Focus.jpg";
+import Ai1 from "../assets/ai1.jpg";
+import Ai2 from "../assets/ai2.jpg";
+import Pet1 from "../assets/pet1.jpg";
+import Pet2 from "../assets/pet2.jpg";
 import Fitjust from "../assets/Fitjust1.jpg"
 import Fitjust2 from "../assets/Fitjust2.jpg"
 import Phone from "../assets/phone.jpg"
@@ -32,16 +32,54 @@ import IhaveGPU1 from "../assets/gpu1.jpg"
 import IhaveGPU2 from "../assets/gpu2.jpg"
 import IhaveGPU3 from "../assets/gpu3.jpg"
 import IhaveGPU4 from "../assets/gpu4.png"
+import Kr1 from "../assets/kr1.png";
+import Kr2 from "../assets/kr2.png";
+import Kr3 from "../assets/kr3.png";
+import Kr4 from "../assets/kr4.png";
+import Kr5 from "../assets/kr5.png";
 // ถ้ามีรูปอื่นก็ import เพิ่ม: import rmuti2 from "../assets/rmuti2.jpg";
 
 const projects = [
+    {
+        "title": "KeyRush - Interactive Terminal Training",
+        "description": "Web Application สำหรับฝึกฝนการใช้ Command Line (Linux/Windows) และคีย์ลัด ผ่านระบบเซิร์ฟเวอร์จำลองสุดน่ารัก",
+        "longDescription": "KeyRush คือแพลตฟอร์มฝึกทักษะการพิมพ์คำสั่งคอมพิวเตอร์แบบ Gamification ช่วยให้ผู้ใช้เรียนรู้และทดลองใช้คำสั่ง Terminal จริงผ่านสภาพแวดล้อมจำลองที่ปลอดภัย 100% มาพร้อมระบบด่านภารกิจ คู่มือคำสั่งมาตรฐานกว่า 100 คำสั่ง ขับเคลื่อนด้วยสถาปัตยกรรม Backend แบบ Serverless บน Edge Network ที่ประมวลผลได้อย่างรวดเร็วและมีประสิทธิภาพ",
+        "tech": [
+            "Next.js",
+            "Hono (Cloudflare Workers)",
+            "Cloudflare D1 (SQLite)",
+            "Prisma ORM",
+            "TypeScript",
+            "Tailwind & Framer Motion"
+        ],
+        "images": [
+            Kr1,
+            Kr2,
+            Kr3,
+            Kr4,
+            Kr5
+        ],
+        "link": "https://keyrush-swart.vercel.app/",
+        "github": "https://github.com/Reversenb/keyrush"
+    },
+    {
+
+        title: "Fire Focus",
+        description: "A gamified focus timer application with offline party mode to boost productivity.",
+        longDescription: "แอปพลิเคชันจับเวลาโฟกัสที่เปลี่ยนการทำงานให้เป็นเกมเลี้ยงกองไฟ (Gamification) โดดเด่นด้วยฟีเจอร์ Offline Party Mode เชื่อมต่อกับเพื่อนผ่าน Bluetooth โดยไม่ต้องใช้เน็ต เพื่อช่วยกันโฟกัสและสร้างวินัยร่วมกัน พร้อมระบบบทลงโทษ (Penalty) ตัดคะแนนจริง และ UI แบบ Glassmorphism สุดล้ำ",
+        tech: ["Flutter", "Dart", "SQLite", "Nearby Connections", "Lottie", "Gemini API",],
+        images: [FireFocus],
+        link: "#",
+        github: "#"
+
+    },
     {
         title: "BallHub",
         description: "Ballhub is a movie streaming web application inspired by platforms like Netflix. The platform is designed with a modern dark theme UI, smooth navigation, and a responsive movie browsing experience.",
         longDescription: "โปรเจกต์นี้เป็นการจำลองแพลตฟอร์มสตรีมมิ่งที่เน้นความเร็วและการตอบสนองของผู้ใช้งาน มีระบบจัดการข้อมูลภาพยนตร์ผ่าน MongoDB และเชื่อมต่อ API ที่พัฒนาด้วย ElysiaJS ทำให้การดึงข้อมูลทำได้รวดเร็วมาก",
         tech: ["Angular", "ElysiaJS", "MongoDB", "TypeScript", "REST API"],
-        
-        images: [BallHub, BallHub2], 
+
+        images: [BallHub, BallHub2],
         link: "#",
         github: "#"
     },
@@ -50,7 +88,7 @@ const projects = [
         description: "A fast-paced 2D action game where players step into the role of a fearless ninja frog armed with a trusty M16.",
         longDescription: "ตัวเกมเน้นความมันส์ในการต่อสู้กับมอนสเตอร์ พัฒนาด้วย Unity และเขียนสคริปต์ควบคุมด้วย C# มีระบบ Score และ Lives เพื่อเพิ่มความท้าทาย",
         tech: ["Unity", "C#"],
-        images: [Game,Game2], 
+        images: [Game, Game2],
         link: "#",
         github: "#"
     },
@@ -63,83 +101,74 @@ const projects = [
         link: "#",
         github: "#"
     },
+
+
     {
-       
-    title: "Fire Focus",
-    description: "A gamified focus timer application with offline party mode to boost productivity.",
-    longDescription: "แอปพลิเคชันจับเวลาโฟกัสที่เปลี่ยนการทำงานให้เป็นเกมเลี้ยงกองไฟ (Gamification) โดดเด่นด้วยฟีเจอร์ Offline Party Mode เชื่อมต่อกับเพื่อนผ่าน Bluetooth โดยไม่ต้องใช้เน็ต เพื่อช่วยกันโฟกัสและสร้างวินัยร่วมกัน พร้อมระบบบทลงโทษ (Penalty) ตัดคะแนนจริง และ UI แบบ Glassmorphism สุดล้ำ",
-    tech: ["Flutter", "Dart", "SQLite", "Nearby Connections", "Lottie", "Gemini API",],
-    images: [FireFocus],
-    link: "#",
-    github: "#"
+        "title": "AI WEATHER",
+        "description": "An intelligent weather assistant chatbot on LINE, powered by n8n and Gemini API.",
+        "longDescription": "แชทบอทพยากรณ์อากาศอัจฉริยะบน LINE OA ที่ไม่ได้แค่บอกอุณหภูมิ แต่ดูแลคุณเหมือนเพื่อน พัฒนาด้วย n8n Workflow Automation ในการดึงข้อมูลสภาพอากาศ และใช้ Gemini API วิเคราะห์ข้อมูลเพื่อสร้างคำเตือนและข้อแนะนำที่เป็นธรรมชาติและใส่ใจผู้ใช้ (เช่น 'วันนี้พายุเข้านะ อย่าลืมพกร่มและขับรถระวังด้วย') รองรับการค้นหาตามรายชื่อจังหวัด",
+        "tech": ["n8n", "Gemini API", "LINE Messaging API", "OpenWeatherMap", "Webhook"],
+        "images": [Ai1, Ai2],
+        "link": "#",
+        "github": "#"
+    }
+    ,
+    {
+
+        "title": "Pet Feeder IoT",
+        "description": "Smart automatic pet feeder controlled via mobile app using ESP8266 and Blynk.",
+        "longDescription": "เครื่องให้อาหารสัตว์เลี้ยงอัตโนมัติ (Smart Pet Feeder) สั่งงานผ่านมือถือได้จากทุกที่ด้วยแอปพลิเคชัน Blynk เชื่อมต่อผ่าน WiFi โดยใช้ไมโครคอนโทรลเลอร์ ESP8266 ควบคุมการทำงานของ Servo Motor (MG995) แรงบิดสูงเพื่อเปิด-ปิดช่องจ่ายอาหารได้อย่างแม่นยำ มาพร้อมฟีเจอร์ตั้งเวลาให้อาหารอัตโนมัติ (Scheduled Timer) ช่วยให้สัตว์เลี้ยงไม่อดแม้เวลาที่คุณไม่อยู่บ้าน",
+        "tech": ["ESP8266", "Blynk", "Arduino IDE", "C++", "Servo MG995"],
+        "images": [Pet1, Pet2],
+        "link": "#",
+        "github": "#"
+
+    }
+    ,
+    {
+
+
+
+        "title": "Fit - 7 Day Workout Planner",
+        "description": "Personalized fitness scheduling app for 7-day workout routines and exercise tracking.",
+        "longDescription": "Fitjust เป็นแอปพลิเคชันจัดการตารางออกกำลังกายแบบครบวงจร 7 วัน ที่ช่วยให้ผู้ใช้งานสามารถวางแผนท่าออกกำลังกายในแต่ละวันได้อย่างเป็นระบบ มาพร้อมคลังท่าออกกำลังกายที่แบ่งตามส่วนต่างๆ ของร่างกาย (Body Parts) ผู้ใช้สามารถจัดตารางฝึกซ้อมล่วงหน้า ติดตามความคืบหน้า และตั้งเป้าหมายรายสัปดาห์ได้ เพื่อช่วยสร้างวินัยและทำให้การออกกำลังกายมีประสิทธิภาพสูงสุด",
+        "tech": ["Flutter", "Dart", "SQLite", "Lottie Animations", "API"],
+        "images": [Fitjust, Fitjust2],
+        "link": "#",
+        "github": "#"
+
+
 
     },
-    
-{
-    "title": "AI WEATHER",
-    "description": "An intelligent weather assistant chatbot on LINE, powered by n8n and Gemini API.",
-    "longDescription": "แชทบอทพยากรณ์อากาศอัจฉริยะบน LINE OA ที่ไม่ได้แค่บอกอุณหภูมิ แต่ดูแลคุณเหมือนเพื่อน พัฒนาด้วย n8n Workflow Automation ในการดึงข้อมูลสภาพอากาศ และใช้ Gemini API วิเคราะห์ข้อมูลเพื่อสร้างคำเตือนและข้อแนะนำที่เป็นธรรมชาติและใส่ใจผู้ใช้ (เช่น 'วันนี้พายุเข้านะ อย่าลืมพกร่มและขับรถระวังด้วย') รองรับการค้นหาตามรายชื่อจังหวัด",
-    "tech": ["n8n", "Gemini API", "LINE Messaging API", "OpenWeatherMap", "Webhook"],
-    "images": [Ai1,Ai2],
-    "link": "#",
-    "github": "#"
-}
-,
-{
-    
-    "title": "Pet Feeder IoT",
-    "description": "Smart automatic pet feeder controlled via mobile app using ESP8266 and Blynk.",
-    "longDescription": "เครื่องให้อาหารสัตว์เลี้ยงอัตโนมัติ (Smart Pet Feeder) สั่งงานผ่านมือถือได้จากทุกที่ด้วยแอปพลิเคชัน Blynk เชื่อมต่อผ่าน WiFi โดยใช้ไมโครคอนโทรลเลอร์ ESP8266 ควบคุมการทำงานของ Servo Motor (MG995) แรงบิดสูงเพื่อเปิด-ปิดช่องจ่ายอาหารได้อย่างแม่นยำ มาพร้อมฟีเจอร์ตั้งเวลาให้อาหารอัตโนมัติ (Scheduled Timer) ช่วยให้สัตว์เลี้ยงไม่อดแม้เวลาที่คุณไม่อยู่บ้าน",
-    "tech": ["ESP8266", "Blynk", "Arduino IDE", "C++", "Servo MG995"],
-    "images": [Pet1,Pet2],
-    "link": "#",
-    "github": "#"
-
-}
-,
-// {
-    
-   
-   
-//     "title": "Fit - 7 Day Workout Planner",
-//     "description": "Personalized fitness scheduling app for 7-day workout routines and exercise tracking.",
-//     "longDescription": "Fitjust เป็นแอปพลิเคชันจัดการตารางออกกำลังกายแบบครบวงจร 7 วัน ที่ช่วยให้ผู้ใช้งานสามารถวางแผนท่าออกกำลังกายในแต่ละวันได้อย่างเป็นระบบ มาพร้อมคลังท่าออกกำลังกายที่แบ่งตามส่วนต่างๆ ของร่างกาย (Body Parts) ผู้ใช้สามารถจัดตารางฝึกซ้อมล่วงหน้า ติดตามความคืบหน้า และตั้งเป้าหมายรายสัปดาห์ได้ เพื่อช่วยสร้างวินัยและทำให้การออกกำลังกายมีประสิทธิภาพสูงสุด",
-//     "tech": ["Flutter", "Dart", "SQLite", "Lottie Animations","API"],
-//     "images": [Fitjust,Fitjust2],
-//     "link": "#",
-//     "github": "#"
+    {
+        "title": "Phone Store Manager - ระบบบริหารจัดการร้านโทรศัพท์",
+        "description": "Web Application สำหรับจัดการข้อมูลร้านค้าและเจ้าของร้านแบบ Real-time พัฒนาด้วย Next.js และ Supabase",
+        "longDescription": "Phone Store Manager คือระบบ Back-office สำหรับบริหารจัดการเครือข่ายร้านขายโทรศัพท์มือถือ ออกแบบมาเพื่อให้ผู้ดูแลระบบ",
+        "tech": [
+            "Next.js ",
+            "Supabase ",
+            "Tailwind CSS",
+            "TypeScript",
+            "CRUD"
+        ],
+        "images": [
+            Phone
+        ],
+        "link": "#",
+        "github": "#"
+    },
+    {
+        "title": "I HAVE GPU - AI PC Builder & Store",
+        "description": "Next.js E-commerce platform with AI-powered PC specification builder.",
+        "longDescription": "I HAVE GPU คือเว็บแอปพลิเคชัน E-commerce สำหรับจำหน่ายอุปกรณ์คอมพิวเตอร์ครบวงจร จุดเด่นคือระบบ 'AI PC Builder' ที่เชื่อมต่อกับ Gemini AI ช่วยให้ผู้ใช้สามารถจัดสเปกคอมพิวเตอร์ได้อัตโนมัติเพียงแค่พิมพ์ความต้องการ หรือระบุงบประมาณ ระบบจะเลือกอุปกรณ์ที่เข้ากันได้ (Compatibility Check) ให้ทันที มาพร้อมระบบจัดการสินค้า (Inventory), ระบบตะกร้า (Cart), การชำระเงิน และ Dashboard สำหรับ Admin เพื่อดูยอดขายและจัดการออเดอร์",
+        "tech": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS", "Gemini AI API", "Zustand"],
+        "images": [IhaveGPU1, IhaveGPU2, IhaveGPU3, IhaveGPU4],
+        "link": "#",
+        "github": "#"
+    },
 
 
 
-// },
-{
-  "title": "Phone Store Manager - ระบบบริหารจัดการร้านโทรศัพท์",
-  "description": "Web Application สำหรับจัดการข้อมูลร้านค้าและเจ้าของร้านแบบ Real-time พัฒนาด้วย Next.js และ Supabase",
-  "longDescription": "Phone Store Manager คือระบบ Back-office สำหรับบริหารจัดการเครือข่ายร้านขายโทรศัพท์มือถือ ออกแบบมาเพื่อให้ผู้ดูแลระบบ",
-  "tech": [
-    "Next.js ",
-    "Supabase ",
-    "Tailwind CSS",
-    "TypeScript",
-    "CRUD"
-  ],
-  "images": [
-    Phone
-  ],
-  "link": "#",
-  "github": "#"
-},
-{
-  "title": "I HAVE GPU - AI PC Builder & Store",
-  "description": "Next.js E-commerce platform with AI-powered PC specification builder.",
-  "longDescription": "I HAVE GPU คือเว็บแอปพลิเคชัน E-commerce สำหรับจำหน่ายอุปกรณ์คอมพิวเตอร์ครบวงจร จุดเด่นคือระบบ 'AI PC Builder' ที่เชื่อมต่อกับ Gemini AI ช่วยให้ผู้ใช้สามารถจัดสเปกคอมพิวเตอร์ได้อัตโนมัติเพียงแค่พิมพ์ความต้องการ หรือระบุงบประมาณ ระบบจะเลือกอุปกรณ์ที่เข้ากันได้ (Compatibility Check) ให้ทันที มาพร้อมระบบจัดการสินค้า (Inventory), ระบบตะกร้า (Cart), การชำระเงิน และ Dashboard สำหรับ Admin เพื่อดูยอดขายและจัดการออเดอร์",
-  "tech": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS", "Gemini AI API", "Zustand"],
-  "images": [IhaveGPU1,IhaveGPU2,IhaveGPU3,IhaveGPU4], 
-  "link": "#",
-  "github": "#"
-}
-
-    
 ];
 
 export function Projects() {
@@ -182,8 +211,8 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ 
-                                y: -12, 
+                            whileHover={{
+                                y: -12,
                                 scale: 1.02,
                                 boxShadow: "0 20px 40px -10px rgba(79, 70, 229, 0.15)",
                                 borderColor: "rgba(99, 102, 241, 0.4)"
@@ -192,14 +221,14 @@ export function Projects() {
                             <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                             <div className="relative h-56 overflow-hidden">
-                                <Image 
-                                    src={project.images[0]} 
-                                    alt={project.title} 
-                                    fill 
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                                <Image
+                                    src={project.images[0]}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-                                
+
                                 <div className="absolute top-4 right-4 flex gap-2 translate-y-[-20px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                                     <div className="p-2 bg-black/50 backdrop-blur-md rounded-full text-white hover:bg-indigo-600 transition-colors">
                                         <ExternalLink size={16} />
@@ -214,7 +243,7 @@ export function Projects() {
                                 <p className="text-gray-400 text-sm line-clamp-2 mb-4 group-hover:text-gray-300 transition-colors">
                                     {project.description}
                                 </p>
-                                
+
                                 <div className="flex flex-wrap gap-2 mt-auto">
                                     {project.tech.slice(0, 3).map((t, i) => (
                                         <span key={i} className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 border border-white/10 rounded text-gray-400 group-hover:border-indigo-500/30 group-hover:text-indigo-300 transition-colors">
@@ -234,21 +263,21 @@ export function Projects() {
             <AnimatePresence>
                 {selectedProject && (
                     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
-                        <motion.div 
+                        <motion.div
                             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedProject(null)}
                         />
-                        
-                        <motion.div 
+
+                        <motion.div
                             className="relative bg-[#161b22] w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 shadow-2xl"
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
                         >
-                            <button 
+                            <button
                                 className="absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full text-white hover:bg-white/20 transition-colors"
                                 onClick={() => setSelectedProject(null)}
                             >
@@ -256,20 +285,20 @@ export function Projects() {
                             </button>
 
                             <div className="relative h-[300px] md:h-[450px] w-full bg-black">
-                                <motion.div 
+                                <motion.div
                                     key={currentImgIndex}
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     className="relative h-full w-full"
                                 >
-                                    <Image 
-                                        src={selectedProject.images[currentImgIndex]} 
-                                        alt="detail" 
-                                        fill 
+                                    <Image
+                                        src={selectedProject.images[currentImgIndex]}
+                                        alt="detail"
+                                        fill
                                         className="object-contain"
                                     />
                                 </motion.div>
-                                
+
                                 {selectedProject.images.length > 1 && (
                                     <>
                                         <button onClick={prevImg} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white">

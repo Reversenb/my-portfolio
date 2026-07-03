@@ -3,19 +3,13 @@
 import { motion, type Variants } from "framer-motion";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import React, { useEffect, useMemo, useRef, useState, type JSX } from "react";
+import React, { useEffect, useRef, useState, type JSX } from "react";
 
 // Icons
-import { Github, Instagram, ArrowRight, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"; 
-import Image from "next/image"; 
+import { Github, Instagram, ArrowRight, ChevronDown } from "lucide-react";
 
 // ✅ Import 3D Keyboard
 import KeyboardCanvas from "./3d/KeyboardCanvas";
-
-// Import images
-import rv1 from "../assets/rmuti1.jpg"; 
-import rv3 from "../assets/rmuti3.jpg";
-import rv4 from "../assets/rmuti4.jpg";
 
 const fadeInUp: Variants = {
     initial: { opacity: 0, y: 20 },
@@ -26,18 +20,9 @@ const staggerContainer: Variants = {
     animate: { transition: { staggerChildren: 0.1 } },
 }
 
-const DESKTOP_SLIDER = { width: 700, height: 500 }
-const MOBILE_SLIDER = { height: 220 }
-
-const GALLERY = [
-    rv1,
-    rv3,
-    rv4,
-]
-
 function useMediaQuery(query: string) {
     const [matches, setMatches] = useState<boolean>(false);
-    
+
     useEffect(() => {
         const media = window.matchMedia(query);
         if (media.matches !== matches) {
@@ -47,44 +32,12 @@ function useMediaQuery(query: string) {
         media.addEventListener("change", listener);
         return () => media.removeEventListener("change", listener);
     }, [matches, query]);
-    
+
     return matches;
 }
 
 export function Hero(): JSX.Element {
     const isMobile = useMediaQuery("(max-width: 768px)")
-
-    // ===== Slider state =====
-    const [index, setIndex] = useState(0)
-    const total = GALLERY.length
-    const intervalMs = 3500
-    const timerRef = useRef<NodeJS.Timeout | null>(null)
-
-    const next = () => setIndex((i) => (i + 1) % total)
-    const prev = () => setIndex((i) => (i - 1 + total) % total)
-
-    const startAuto = () => {
-        stopAuto()
-        if (total > 1) {
-            timerRef.current = setInterval(() => {
-                setIndex((i) => (i + 1) % total)
-            }, intervalMs)
-        }
-    }
-
-    const stopAuto = () => {
-        if (timerRef.current) {
-            clearInterval(timerRef.current)
-            timerRef.current = null
-        }
-    }
-
-    useEffect(() => {
-        startAuto()
-        return stopAuto
-    }, [total])
-
-    const xTranslate = useMemo(() => `-${index * (100 / total)}%`, [index, total])
 
     // ===== Typewriter (loop) for the small snippet =====
     const SNIPPET = `const aboutMe: Thanabodee Sahakongsin = { ... }`
@@ -162,9 +115,9 @@ export function Hero(): JSX.Element {
                             <span className="text-sm font-medium"> 👋Hello, I'm </span>
                         </motion.div>
 
-                        <motion.h1 
-                            className="glitch text-5xl md:text-7xl font-extrabold mb-4 leading-tight tracking-tight" 
-                            variants={fadeInUp} 
+                        <motion.h1
+                            className="glitch text-5xl md:text-7xl font-extrabold mb-4 leading-tight tracking-tight"
+                            variants={fadeInUp}
                             whileHover={{ scale: 1.02 }}
                         >
                             Thanabodee
@@ -181,19 +134,19 @@ export function Hero(): JSX.Element {
                         </motion.p>
 
                         <motion.div className="cta-buttons flex flex-wrap gap-4 mb-8" variants={staggerContainer}>
-                            <motion.a 
-                                href="#projects" 
-                                className="cta-primary px-8 py-3 bg-white text-blue-900 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2" 
-                                whileHover={{ scale: 1.05 }} 
+                            <motion.a
+                                href="#projects"
+                                className="cta-primary px-8 py-3 bg-white text-blue-900 rounded-full font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+                                whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 View My Projects
                                 <ArrowRight size={20} />
                             </motion.a>
-                            <motion.a 
-                                href="#contact" 
-                                className="cta-secondary px-8 py-3 border border-white/30 bg-white/5 backdrop-blur-sm rounded-full font-bold text-white hover:bg-white/10 transition-all flex items-center gap-2" 
-                                whileHover={{ scale: 1.05 }} 
+                            <motion.a
+                                href="#contact"
+                                className="cta-secondary px-8 py-3 border border-white/30 bg-white/5 backdrop-blur-sm rounded-full font-bold text-white hover:bg-white/10 transition-all flex items-center gap-2"
+                                whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 Contact Me
@@ -225,9 +178,9 @@ export function Hero(): JSX.Element {
                         </motion.div>
                     </div>
 
-                    {/* ✅ ส่วน 3D Keyboard: ลบกรอบ Container เดิมออกเพื่อให้ลอยอิสระ */}
-                    <motion.div 
-                        className="w-full relative mt-4 z-10" 
+                    {/* ✅ ส่วน 3D Keyboard */}
+                    <motion.div
+                        className="w-full relative mt-4 z-10"
                         variants={fadeInUp}
                         style={{ height: isMobile ? '400px' : '550px' }}
                     >
@@ -236,7 +189,7 @@ export function Hero(): JSX.Element {
 
                 </motion.div>
 
-                {/* ===== Right: Code & Slider ===== */}
+                {/* ===== Right: Code Blocks ===== */}
                 <motion.div
                     className="hero-right hidden md:flex"
                     initial={{ opacity: 0, x: 50 }}
@@ -248,6 +201,7 @@ export function Hero(): JSX.Element {
                         gap: "1.5rem",
                     }}
                 >
+                    {/* Code Display 1 */}
                     <div className="code-display w-full max-w-[700px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#1e1e1e]/80 backdrop-blur-xl">
                         <SyntaxHighlighter
                             language="typescript"
@@ -264,7 +218,7 @@ export function Hero(): JSX.Element {
   role: "Full-Stack Developer",
   stack: {
     languages: ["JavaScript", "TypeScript", "Python", "C++", "C#", "Golang","Dart"],
-    frameworks: ["React", "Next.js", "TailwindCSS", "Flutter"],
+    frameworks: ["React", "Next.js", "TailwindCSS", "Flutter", "Express", "Hono"],
   },
   traits: ["dark-mode purist", "bug-slayer"],
   missionStatement: "Craft. Learn. Ship.",
@@ -273,6 +227,7 @@ export function Hero(): JSX.Element {
                         </SyntaxHighlighter>
                     </div>
 
+                    {/* Code Display 2 (Typewriter) */}
                     <div className="code-display w-full max-w-[520px] relative">
                         <div className="rounded-xl overflow-hidden border border-white/10 bg-[#1e1e1e]/80 backdrop-blur-xl mb-4">
                             <SyntaxHighlighter
@@ -300,64 +255,17 @@ export function Hero(): JSX.Element {
                             </div>
                         </motion.div>
                     </div>
-
-                    <div
-                        className="hero-slider relative overflow-hidden rounded-2xl shadow-2xl border border-white/10"
-                        onMouseEnter={stopAuto}
-                        onMouseLeave={startAuto}
-                        style={{
-                            width: isMobile ? "100%" : DESKTOP_SLIDER.width,
-                            height: isMobile ? MOBILE_SLIDER.height : DESKTOP_SLIDER.height,
-                        }}
-                    >
-                        <motion.div
-                            className="slides-track flex h-full"
-                            animate={{ x: xTranslate }}
-                            transition={{ type: "spring", stiffness: 70, damping: 20 }}
-                            style={{ width: `${total * 100}%` }}
-                        >
-                            {GALLERY.map((src, i) => (
-                                <div 
-                                    key={i} 
-                                    className="slide relative h-full flex-shrink-0 bg-slate-900"
-                                    style={{ width: `${100 / total}%` }}
-                                >
-                                    <Image
-                                        src={src}
-                                        alt={`slide-${i + 1}`}
-                                        fill
-                                        style={{ objectFit: "contain" }} 
-                                        className="hover:scale-105 transition-transform duration-700"
-                                    />
-                                </div>
-                            ))}
-                        </motion.div>
-
-                        <button 
-                            aria-label="Prev" 
-                            onClick={prev} 
-                            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 transition-all z-10"
-                        >
-                            <ChevronLeft size={24} />
-                        </button>
-                        <button 
-                            aria-label="Next" 
-                            onClick={next} 
-                            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 transition-all z-10"
-                        >
-                            <ChevronRight size={24} />
-                        </button>
-                    </div>
                 </motion.div>
             </div>
 
-             <motion.div
+            {/* Scroll Indicator */}
+            <motion.div
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 cursor-pointer z-20"
                 initial={{ opacity: 0, y: -20 }}
-                animate={{ 
-                    opacity: 1, 
+                animate={{
+                    opacity: 1,
                     y: 0,
-                    transition: { delay: 1, duration: 0.8 } 
+                    transition: { delay: 1, duration: 0.8 }
                 }}
             >
                 <motion.a
