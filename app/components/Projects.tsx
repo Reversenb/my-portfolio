@@ -37,6 +37,7 @@ import Kr2 from "../assets/kr2.png";
 import Kr3 from "../assets/kr3.png";
 import Kr4 from "../assets/kr4.png";
 import Kr5 from "../assets/kr5.png";
+import Kr6 from "../assets/kr6.png";
 // ถ้ามีรูปอื่นก็ import เพิ่ม: import rmuti2 from "../assets/rmuti2.jpg";
 
 const projects = [
@@ -57,7 +58,8 @@ const projects = [
             Kr2,
             Kr3,
             Kr4,
-            Kr5
+            Kr5,
+            Kr6
         ],
         "link": "https://keyrush-swart.vercel.app/",
         "github": "https://github.com/Reversenb/keyrush"
