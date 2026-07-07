@@ -72,7 +72,7 @@ const projects = [
         tech: ["Flutter", "Dart", "SQLite", "Nearby Connections", "Lottie", "Gemini API",],
         images: [FireFocus],
         link: "#",
-        github: "#"
+        github: "https://github.com/Reversenb/FireFocus"
 
     },
     {
